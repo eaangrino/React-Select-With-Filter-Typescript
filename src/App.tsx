@@ -1,6 +1,11 @@
 import { FilterOptionOption } from 'react-select/dist/declarations/src/filters';
 import Select, { components, OptionProps, OptionsOrGroups } from 'react-select';
-import { useForm, Controller } from 'react-hook-form';
+import {
+  useForm,
+  Controller,
+  ControllerRenderProps,
+  FieldValues,
+} from 'react-hook-form';
 import * as React from 'react';
 import './style.css';
 
@@ -72,7 +77,11 @@ export default function App() {
             message: 'Es requerido seleccionar algo',
           },
         }}
-        render={({ field: { onChange, onBlur, value, ref } }: any) => {
+        render={({
+          field: { onChange, onBlur, value, ref },
+        }: {
+          field: ControllerRenderProps<FieldValues, 'numberoptions'>;
+        }) => {
           return (
             <Select
               className="select"
