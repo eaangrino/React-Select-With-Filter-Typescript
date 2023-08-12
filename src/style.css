@@ -1,0 +1,10 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select{
+  width: 16rem;
+}
